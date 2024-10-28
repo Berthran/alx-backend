@@ -47,11 +47,15 @@ class Server:
         '''
         Get hypermedia
         '''
+        if index is None:
+            return {}
+
         assert index < len(self.dataset())
 
         dataset = self.indexed_dataset()
         data = []
         i = 0
+
         while len(data) < page_size:
             row = dataset.get(index + i)
             if row:
