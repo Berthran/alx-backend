@@ -47,7 +47,7 @@ class Server:
         '''
         Get hypermedia
         '''
-        if index is None:
+        if index is None or index < 0:
             return {}
 
         assert index < len(self.dataset())
