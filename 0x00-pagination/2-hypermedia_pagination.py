@@ -60,7 +60,7 @@ class Server:
         data = self.get_page(page, page_size)
 
         res = {
-                'page_size': page_size,
+                'page_size': page_size if data else 0,
                 'page': page,
                 'data': data,
                 'next_page': page + 1 if e_index < len(dataset) + 1 else None,
