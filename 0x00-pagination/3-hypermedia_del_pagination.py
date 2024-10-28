@@ -48,8 +48,9 @@ class Server:
         Get hypermedia
         '''
         assert index < len(self.dataset())
+
         dataset = self.indexed_dataset()
-        data: List[List[str]] = []
+        data = []
         i = 0
         while len(data) < page_size:
             row = dataset.get(index + i)
