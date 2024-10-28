@@ -65,6 +65,6 @@ class Server:
                 'data': data,
                 'next_page': page + 1 if e_index < len(dataset) + 1 else None,
                 'prev_page': page - 1 if s_index > 0 else None,
-                'total_pages': (1 + len(dataset)) // page_size
+                'total_pages': math.ceil(len(dataset) / page_size)
                 }
         return res
