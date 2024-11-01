@@ -29,7 +29,7 @@ class FIFOCache(BaseCaching):
                 if len(self.cache_data) == self.MAX_ITEMS:
                     keysReversed = sorted(self.cache_data.keys(), reverse=True)
                     keyToDiscard = keysReversed[-1]
-                    print("DISCARD: ", keyToDiscard)
+                    print("DISCARD:", keyToDiscard)
                     self.cache_data.pop(keyToDiscard)
                     self.cache_data.update({key: item})
                 else:
