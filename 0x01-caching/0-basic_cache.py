@@ -21,7 +21,7 @@ class BasicCache(BaseCaching):
         '''
         Assigns the item value to the key in the cache storage
         '''
-        if not key and not item:
+        if not key or not item:
             pass
         else:
             self.cache_data[key] = item
