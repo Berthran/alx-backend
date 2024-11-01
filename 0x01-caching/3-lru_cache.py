@@ -43,10 +43,10 @@ class LRUCache(BaseCaching):
                     self.cache_data.pop(keyToDiscard)
                     # Add new data to cache
                     self.cache_data.update({key: item})
-                    # Remove data from LRU Tracker
-                    self.lruTracker.pop(keyToDiscard)
                     # Add new data to LRUTracker
                     self.addToLRUTracker(key)
+                    # Remove data from LRU Tracker
+                    self.lruTracker.pop(keyToDiscard)
                 else:
                     self.cache_data.update({key: item})
                     if len(self.lruTracker) == 0:
